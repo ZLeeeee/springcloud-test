@@ -19,6 +19,7 @@
         <module>springcloud-test-eureka-provider</module>
         <module>springcloud-test-eureka-ribbon</module>
         <module>springcloud-test-eureka-feign</module>
+        <module>springcloud-test-eureka-zuul</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
