@@ -1,5 +1,7 @@
 package com.jolly.web.controller;
 
+import com.jolly.web.service.HelloService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -13,10 +15,11 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class HelloController {
     @Autowired
-    RestTemplate restTemplate;
+    HelloService service;
     @GetMapping("/hello")
     public String hello(){
         log.info("/hello:ribbon");
-        return restTemplate.getForObject("http://hello-service/test/hello",String.class);
+        return service.hello();
     }
+
 }
